@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/LoginFragment">
+
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.example.karta.activities.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_LoginFragment_to_CadastroFragment"
+            app:destination="@id/CadastroFragment" />
+        <action
+            android:id="@+id/action_LoginFragment_to_EnderecosFragment"
+            app:destination="@id/EnderecosFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CadastroFragment"
+        android:name="com.example.karta.activities.CadastroFragment"
+        android:label="Cadastro"
+        tools:layout="@layout/cadastro_fragment">
+        <action
+            android:id="@+id/action_CadastroFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+        <action
+            android:id="@+id/action_CadastroFragment_to_EnderecosFragment"
+            app:destination="@id/EnderecosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/EnderecosFragment"
+        android:name="com.example.karta.activities.EnderecosFragment"
+        android:label="Endereços"
+        tools:layout="@layout/fragment_enderecos">
+        <action
+            android:id="@+id/action_EnderecosFragment_to_CadastroEnderecoFragment"
+            app:destination="@id/CadastroEnderecoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CidadesFragment"
+        android:name="com.example.karta.activities.CidadesFragment"
+        android:label="Cidades"
+        tools:layout="@layout/cidades_fragment">
+        <action
+            android:id="@+id/action_CidadesFragment_to_CadastroCidade"
+            app:destination="@id/CadastroCidadeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CadastroCidadeFragment"
+        android:name="com.example.karta.activities.CadastroCidadeFragment"
+        android:label="Adicionar cidade"
+        tools:layout="@layout/cadastro_cidade_fragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/CadastroEnderecoFragment"
+        android:name="com.example.karta.activities.CadastroEnderecoFragment"
+        android:label="Adicionar endereço"
+        tools:layout="@layout/cadastro_endereco_fragment">
+        <action
+            android:id="@+id/action_CadastroEnderecoFragment_to_EnderecosFragment"
+            app:destination="@id/EnderecosFragment" />
+        <action
+            android:id="@+id/action_CadastroEnderecoFragment_to_CidadesFragment"
+            app:destination="@id/CidadesFragment" />
+    </fragment>
+
+</navigation>

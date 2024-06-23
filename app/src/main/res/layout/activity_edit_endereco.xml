@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.EditEndereco">
+
+    <TextView
+        android:id="@+id/textView4Ed"
+        android:layout_width="371dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="44dp"
+        android:text="Adicionar novo endereço"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inputLatitudeEd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginBottom="3dp"
+        android:ems="10"
+        android:hint="Latitude"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/textView8Ed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7Ed" />
+
+    <EditText
+        android:id="@+id/inputLongitudeEd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginBottom="3dp"
+        android:ems="10"
+        android:hint="Longitude"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/textView5Ed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8Ed" />
+
+    <TextView
+        android:id="@+id/textView7Ed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="333dp"
+        android:layout_marginBottom="3dp"
+        android:text="Latitude:"
+        app:layout_constraintBottom_toTopOf="@+id/inputLatitudeEd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4Ed" />
+
+    <TextView
+        android:id="@+id/textView8Ed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="333dp"
+        android:layout_marginBottom="3dp"
+        android:text="Longitude:"
+        app:layout_constraintBottom_toTopOf="@+id/inputLongitudeEd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputLatitudeEd" />
+
+    <Spinner
+        android:id="@+id/spinnerCidadesEd"
+        android:layout_width="375dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3Ed" />
+
+    <TextView
+        android:id="@+id/textView3Ed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="321dp"
+        android:layout_marginBottom="3dp"
+        android:text="Cidade:"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerCidadesEd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputDescricaoEd" />
+
+    <Button
+        android:id="@+id/buttonEditarEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCidadesEd" />
+
+    <TextView
+        android:id="@+id/textView5Ed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="333dp"
+        android:layout_marginBottom="3dp"
+        android:text="Descrição:"
+        app:layout_constraintBottom_toTopOf="@+id/inputDescricaoEd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputLongitudeEd" />
+
+    <EditText
+        android:id="@+id/inputDescricaoEd"
+        android:layout_width="375dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="3dp"
+        android:ems="10"
+        android:hint="Descrição"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textView3Ed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5Ed" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
