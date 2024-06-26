@@ -34,9 +34,25 @@ public class CadastroCidadeFragment extends Fragment {
         return binding.getRoot();
 
     }
-
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        
+        List<String> cidadesAutocomplete = new ArrayList<>();
+        if (estado.equals("São Paulo")) {
+            cidadesAutocomplete.add("São Paulo");
+            cidadesAutocomplete.add("Santos");
+            cidadesAutocomplete.add("São José dos Campos");
+        } else if (estado.equals("Santa Catarina")) {
+            cidadesAutocomplete.add("Florianópolis");
+            cidadesAutocomplete.add("Joinville");
+            cidadesAutocomplete.add("Blumenau");
+        } else if (estado.equals("Sergipe")) {
+            cidadesAutocomplete.add("Aracaju");
+            cidadesAutocomplete.add("Itabaiana");
+            cidadesAutocomplete.add("Estância");
+        }
+
 
         binding.buttonSubmitCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
