@@ -125,4 +125,47 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
             mapFragment.getMapAsync(this);
         }
     }
+    private void showNavigationOptions() {
+        final CharSequence[] options = {"Google Maps", "Waze"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("Escolha um aplicativo de navegação");
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case 0:
+                        openGoogleMaps();
+                        break;
+                    case 1:
+                        openWaze();
+                        break;
+                }
+            }
+        });
+        builder.show();
+    }
+
+    private void openGoogleMaps() {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=My+Location");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        if (mapIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivity(mapIntent);
+        } else {
+            // Se o Google Maps não estiver instalado
+            Toast.makeText(getContext(), "Google Maps não está instalado", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void openWaze() {
+        try {
+            String url = "waze://?q=My+Location";
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);
+        } catch (Exception ex) {
+            // Se o Waze não estiver instalado
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.waze"));
+            startActivity(intent);
+        }
+    }
 }
